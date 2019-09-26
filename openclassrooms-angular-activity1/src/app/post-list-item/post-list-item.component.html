@@ -1,15 +1,15 @@
 <li class="list-group-item" [ngClass]="{'list-group-item': true, 
-                'list-group-item-success': loveIts > 0, 
-                'list-group-item-danger': loveIts < 0}">
+                'list-group-item-success': post.LoveIts > 0, 
+                'list-group-item-danger': post.LoveIts < 0}">
   <div class="post-header">
-    <h2>{{ title }}</h2>
-    <span>{{ created_at | date: 'dd/mm/yyyy, hh:mm aaaa' }}</span>
+    <h2>{{ post.Title }}</h2>
+    <span>{{ post.Created_at | date: 'dd/mm/yyyy, hh:mm aaaa' }}</span>
   </div>
-  <p>{{ content }}</p>
+  <p>{{ post.Content }}</p>
 
   <div>
     <button class="btn btn-success" (click)="onLike()">Love it!</button>
     <button class="btn btn-danger" (click)="onDislike()">Don't love it!</button>
-    <span class="nb-loveits">{{ loveIts }}</span>
+    <span class="nb-loveits">{{ post.LoveIts }}</span>
   </div>
 </li>
